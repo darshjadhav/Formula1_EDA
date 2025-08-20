@@ -1,5 +1,6 @@
 # FastF1 cache
 .fastf1cache/
+notebooks/.fastf1cache/
 
 # Virtual environment
-.ff1env311/
+.ff1venv311/
