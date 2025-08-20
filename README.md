@@ -2,7 +2,7 @@
 
 This repository provides tools to analyze Formula 1 telemetry data using [FastF1](https://theoehrly.github.io/Fast-F1/).  
 It introduces a custom **Engine Stress Index (ESI)**, which combines RPM, throttle, and positive acceleration signals into a single metric.  
-The code produces lap visualizations, track maps colored by ESI, and tables summarizing the most demanding corners and straights.
+The code produces lap visualisations, track maps colored by ESI, and tables summarizing the most demanding corners and straights.
 
 ---
 
