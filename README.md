@@ -1,36 +1,48 @@
-# F1 Engine Stress Index (ESI) Analysis
+# F1 Data Science Analyses with FastF1
 
-This repository provides tools to analyze Formula 1 telemetry data using [FastF1](https://theoehrly.github.io/Fast-F1/).  
-It introduces a custom **Engine Stress Index (ESI)**, which combines RPM, throttle, and positive acceleration signals into a single metric.  
-The code produces lap visualisations, track maps colored by ESI, and tables summarizing the most demanding corners and straights.
+This repository contains multiple Jupyter notebooks applying **data science and machine learning** techniques to Formula 1 data via [FastF1](https://theoehrly.github.io/Fast-F1/).
 
-## Project Status
-This project is currently **a work in progress**.
-Except frequent changes and incomplete features while development is ongoing.
+Each notebook demonstrates a different analysis approach:
+- 📊 **Performance Metrics (Engine Stress Index)**  
+- 🤖 **Machine Learning Lap Time Prediction**
+
+---
+
+## 📂 Notebooks
+
+### 1. Engine Stress Index (ESI) Analysis
+- Introduces a custom **Engine Stress Index (ESI)** combining RPM, throttle, and positive acceleration.  
+- Produces lap visualisations, track maps colored by ESI, and top-5 demanding corners/straights.  
+- **Goal:** quantify where the power unit is most stressed around a circuit.
+
+### 2. Lap Time Prediction with ML
+- Uses **tyre compound, tyre life, stint progression, and driver info** to predict lap times.  
+- Trains a **Gradient Boosting Regressor** with leakage-aware `GroupKFold` validation by driver.  
+- Achieves ~**1.0s MAE** and ~**0.90 R²** on race data (e.g., 2024 British GP).  
+- Provides **feature importance analysis** (tyre compound dominates), and plots of **actual vs predicted lap times**.  
+- **Goal:** showcase machine learning applied to race strategy/tyre modelling.
+
+---
+
+## 🚧 Project Status
+This project is currently **a work in progress**.  
+Expect frequent changes and incomplete features while development is ongoing.
 
 ---
 
 ## ✨ Features
-- **ESI computation per lap**  
-  Robust scaling of RPM, throttle, and acceleration with configurable weights.  
-- **Corner & straight aggregation**  
-  Identify top stress corners and straights using telemetry and circuit map data.  
-- **Visualization**  
-  - ESI vs. distance with corner markers  
-  - Track map heatmap (colored by ESI) with corner labels  
-  - Top-5 tables for stressful corners/straights  
+- **ESI notebook**: stress index computation, corner/straight aggregation, visualisations.  
+- **Lap Time notebook**: regression modelling, permutation importance, tyre degradation curves.  
 
 ---
 
 ## 📦 Requirements
 - Python 3.10+
 - Dependencies:
-  - `numpy`
-  - `pandas`
-  - `matplotlib`
+  - `numpy`, `pandas`, `matplotlib`
   - `fastf1`
+  - `scikit-learn`
 
 Install via:
 ```bash
-pip install fastf1 matplotlib pandas numpy
-```
+pip install fastf1 matplotlib pandas numpy scikit-learn
